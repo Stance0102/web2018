@@ -1,0 +1,344 @@
+@charset "utf-8"
+
+=max($zindex: 1)
+    width: 100%
+    height: 100%
+    z-index: $zindex
+
+=img($zindex: 0)
+    +max($zindex)
+
+    position: absolute
+
+=parallax($img)
+    position: absolute
+    width: 100%
+    height: 40%
+    background-attachment: fixed
+    background-repeat: no-repeat
+    background-size: cover
+    background-image: $img
+
+=slide($dir, $zin, $num)
+    position: absolute
+    width: 100% * $num
+    height: 100%
+    z-index: $zin
+    @if $dir==left
+        left: 0
+    @else 
+        right: 0
+
+    li
+        float: $dir 
+        list-style-type: none
+        width: 100% / $num
+
+
+=btn($top)
+    position: absolute
+    width: 60px
+    height: 60px
+    border-radius: 60px
+    border: 2px #333 solid
+    text-align: center
+    font-size: 3em
+    font-weight: bold
+    color: #333
+    top: $top
+    background-color: transparent
+    z-index: 99
+
+=dot($left, $bottom)
+    position: absolute
+    width: 15px
+    height: 15px
+    background-color: transparent
+    border: 3px #333 solid
+    border-radius: 15px
+    bottom: $bottom
+    left: $left
+    transition: 1s linear
+    z-index: 999
+
+=fade($opc: 0)
+    +max
+
+    position: absolute
+    opacity: $opc
+
+=udfade($top)
+    +fade
+
+    top: $top
+    left: 0
+
+=lrfade($left)
+    +fade
+
+    top: 0
+    left: $left
+
+=udslide($num, $top)
+    position: absolute
+    width: 100%
+    height: $num * 100%
+    overflow: hidden
+    top: $top
+
+    li
+        list-style-type: none
+        height: 100% / $num
+        top: 0
+
+=slidebox($width)
+    position: absolute
+    width: $width
+    height: 100%
+    bottom: 0
+    left: (100% - $width) / 2
+    overflow: hidden
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+html, body
+    +max
+
+button
+    cursor: pointer
+
+#nav
+    position: fixed
+    left: 0
+    right: 0
+    height: 70px
+    background-color: rgba(0, 0, 0, 0.5)
+    z-index: 9999
+
+    > ul
+        position: relative
+        display: inline-block
+        float: right
+
+    ul
+        li
+            position: relative
+            list-style-type: none
+
+            &:hover > a
+                background-color: #333
+                color: #FFF
+
+            &:hover > ul
+                display: block
+
+        > li
+            float: left
+
+        ul
+            position: absolute
+            z-index: 99
+            top: 100%
+            display: none
+
+            > li
+                a
+                    text-align: left
+                    padding-left: 15px
+                    background-color: #FFF
+                    color: #333
+
+        a
+            background-color: transparent
+            color: #FFF
+            font-size: 1.1em
+            display: block
+            text-decoration: none
+            width: 120px
+            height: 70px
+            padding-top: 20px
+            text-align: center
+            transition: 0.6s ease
+
+            &:hover
+                background-color: #FFF
+                color: #333
+
+.index
+    +max
+
+    position: relative
+    overflow: hidden
+
+.run1, .run2, .page
+    +max
+
+    position: absolute
+    top: 0
+    left: 0
+
+.run2
+    left: 100%
+    opacity: 0
+
+.udrun, .lrrun, .faderun
+    overflow: hidden
+
+.udrunh1
+    +udfade(-30%)
+
+.udrunh2
+    +udfade(30%)
+
+.udimg1
+    +img(0)
+
+.lrrunh1
+    +lrfade(-30%)
+
+.lrrunh2
+    +lrfade(30%)
+
+.img0
+    +img(-1)
+
+.img1
+    +img(0)
+
+.bar
+    +img(1)
+
+.one, .two, .three, .four
+    +max
+
+    position: relative
+
+.h1, .h2
+    +max
+
+    position: absolute
+
+.fadeimg1
+    +fade
+
+.fadeimg2
+    +fade
+
+#fade1
+    z-index: 1
+
+#fade2
+    z-index: 1
+
+#fade3
+    z-index: 0
+
+#fade4
+    z-index: -1
+
+#slidebox1
+    +slidebox(90%)
+
+#slidebox2
+    +slidebox(80%)
+
+#slidebox3
+    +slidebox(80%)
+
+#leftslide1
+    +slide(left,1,10)
+
+#rightslide1
+    +slide(right,0,10)
+
+#leftslide2
+    +slide(left,1,4)
+
+#rightslide2
+    +slide(right,0,4)
+
+#prev1
+    +btn(43%)
+
+    left: 5%
+
+#next1
+    +btn(43%)
+
+    right: 5%
+
+#prev2
+    +btn(43%)
+
+    left: 5%
+
+#next2
+    +btn(43%)
+
+    right: 5%
+
+#dot1
+    +dot(41%, 8%)
+
+#dot2
+    +dot(43%, 8%)
+
+#dot3
+    +dot(45%, 8%)
+
+#dot4
+    +dot(47%, 8%)
+
+#dot5
+    +dot(49%, 8%)
+
+#dot6
+    +dot(51%, 8%)
+
+#dot7
+    +dot(53%, 8%)
+
+#dot8
+    +dot(55%, 8%)
+
+#dot9
+    +dot(57%, 8%)
+
+#dot10
+    +dot(59%, 8%)
+
+#dot11
+    +dot(47%, 6%)
+
+#dot12
+    +dot(49%, 6%)
+
+#dot13
+    +dot(51%, 6%)
+
+#dot14
+    +dot(53%, 6%)
+
+.upslide
+    +udslide(10, 0%)
+
+.down
+    +btn(90%)
+
+    left: 45%
+    font-size: 2em
+
+.up
+    +btn(10%)
+
+    left: 45%
+    font-size: 2em
+
+video
+    +max(0)
+
+    width: auto
+    height: auto

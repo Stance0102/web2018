@@ -1,0 +1,526 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  z-index: 1; }
+
+button {
+  cursor: pointer; }
+
+#nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999; }
+  #nav > ul {
+    position: relative;
+    display: inline-block;
+    float: right; }
+  #nav ul li {
+    position: relative;
+    list-style-type: none; }
+    #nav ul li:hover > a {
+      background-color: #333;
+      color: #FFF; }
+    #nav ul li:hover > ul {
+      display: block; }
+  #nav ul > li {
+    float: left; }
+  #nav ul ul {
+    position: absolute;
+    z-index: 99;
+    top: 100%;
+    display: none; }
+    #nav ul ul > li a {
+      text-align: left;
+      padding-left: 15px;
+      background-color: #FFF;
+      color: #333; }
+  #nav ul a {
+    background-color: transparent;
+    color: #FFF;
+    font-size: 1.1em;
+    display: block;
+    text-decoration: none;
+    width: 120px;
+    height: 70px;
+    padding-top: 20px;
+    text-align: center;
+    transition: 0.6s ease; }
+    #nav ul a:hover {
+      background-color: #FFF;
+      color: #333; }
+
+.index {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+  overflow: hidden; }
+
+.run1, .run2, .page {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.run2 {
+  left: 100%;
+  opacity: 0; }
+
+.udrun, .lrrun, .faderun {
+  overflow: hidden; }
+
+.udrunh1 {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
+  top: -30%;
+  left: 0; }
+
+.udrunh2 {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
+  top: 30%;
+  left: 0; }
+
+.udimg1 {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  position: absolute; }
+
+.lrrunh1 {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -30%; }
+
+.lrrunh2 {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 30%; }
+
+.img0 {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute; }
+
+.img1 {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  position: absolute; }
+
+.bar {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute; }
+
+.one, .two, .three, .four {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative; }
+
+.h1, .h2 {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute; }
+
+.fadeimg1 {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  opacity: 0; }
+
+.fadeimg2 {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  opacity: 0; }
+
+#fade1 {
+  z-index: 1; }
+
+#fade2 {
+  z-index: 1; }
+
+#fade3 {
+  z-index: 0; }
+
+#fade4 {
+  z-index: -1; }
+
+#slidebox1 {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  bottom: 0;
+  left: 5%;
+  overflow: hidden; }
+
+#slidebox2 {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  bottom: 0;
+  left: 10%;
+  overflow: hidden; }
+
+#slidebox3 {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  bottom: 0;
+  left: 10%;
+  overflow: hidden; }
+
+#leftslide1 {
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  z-index: 1;
+  left: 0; }
+  #leftslide1 li {
+    float: left;
+    list-style-type: none;
+    width: 10%; }
+
+#rightslide1 {
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  z-index: 0;
+  right: 0; }
+  #rightslide1 li {
+    float: right;
+    list-style-type: none;
+    width: 10%; }
+
+#leftslide2 {
+  position: absolute;
+  width: 400%;
+  height: 100%;
+  z-index: 1;
+  left: 0; }
+  #leftslide2 li {
+    float: left;
+    list-style-type: none;
+    width: 25%; }
+
+#rightslide2 {
+  position: absolute;
+  width: 400%;
+  height: 100%;
+  z-index: 0;
+  right: 0; }
+  #rightslide2 li {
+    float: right;
+    list-style-type: none;
+    width: 25%; }
+
+#prev1 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  border: 2px #333 solid;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+  top: 43%;
+  background-color: transparent;
+  z-index: 99;
+  left: 5%; }
+
+#next1 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  border: 2px #333 solid;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+  top: 43%;
+  background-color: transparent;
+  z-index: 99;
+  right: 5%; }
+
+#prev2 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  border: 2px #333 solid;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+  top: 43%;
+  background-color: transparent;
+  z-index: 99;
+  left: 5%; }
+
+#next2 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  border: 2px #333 solid;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+  top: 43%;
+  background-color: transparent;
+  z-index: 99;
+  right: 5%; }
+
+#dot1 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 8%;
+  left: 41%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot2 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 8%;
+  left: 43%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot3 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 8%;
+  left: 45%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot4 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 8%;
+  left: 47%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot5 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 8%;
+  left: 49%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot6 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 8%;
+  left: 51%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot7 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 8%;
+  left: 53%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot8 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 8%;
+  left: 55%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot9 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 8%;
+  left: 57%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot10 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 8%;
+  left: 59%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot11 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 6%;
+  left: 47%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot12 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 6%;
+  left: 49%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot13 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 6%;
+  left: 51%;
+  transition: 1s linear;
+  z-index: 999; }
+
+#dot14 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px #333 solid;
+  border-radius: 15px;
+  bottom: 6%;
+  left: 53%;
+  transition: 1s linear;
+  z-index: 999; }
+
+.upslide {
+  position: absolute;
+  width: 100%;
+  height: 1000%;
+  overflow: hidden;
+  top: 0%; }
+  .upslide li {
+    list-style-type: none;
+    height: 10%;
+    top: 0; }
+
+.down {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  border: 2px #333 solid;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+  top: 90%;
+  background-color: transparent;
+  z-index: 99;
+  left: 45%;
+  font-size: 2em; }
+
+.up {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  border: 2px #333 solid;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+  top: 10%;
+  background-color: transparent;
+  z-index: 99;
+  left: 45%;
+  font-size: 2em; }
+
+video {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  width: auto;
+  height: auto; }
+
+/*# sourceMappingURL=style.css.map */
